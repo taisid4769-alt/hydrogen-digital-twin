@@ -17,7 +17,7 @@ def load_ai_assets():
     scaler_path = 'scaler.pkl'
     
     if os.path.exists(model_path) and os.path.exists(scaler_path):
-        model = tf.keras.models.load_model(model_path)
+        model = tf.keras.models.load_model(model_path, compile=False)
         with open(scaler_path, 'rb') as f:
             scaler = pickle.load(f)
         return model, scaler
